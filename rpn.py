@@ -13,12 +13,18 @@ def calculate(arg):
 			elif token == '-':
 				result = val2 - val1
 			stack.append(result)
+
+	if len(stack) > 1:
+		raise ValueError('Too many arguments on the stack')
 	return stack[0]
 
 def main():
 	while True:
-		result = calculate(input("rpm calc> "))
-		print(result)
+		try:
+			result = calculate(input("rpm calc> "))
+			print(result)
+		except ValueError:
+			pass
 
 if __name__ == '__main__':
 	main()
