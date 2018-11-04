@@ -1,6 +1,7 @@
 language: python
 python:
   - "3.5"
-script: coverage run test_rpn.py
+script: coverage run rpn.py < input.txt
 after_success:
+  - coverage report
   - coveralls

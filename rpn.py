@@ -9,6 +9,8 @@ def calculate(arg):
 
 	for token in tokens:
 		try:
+			if token == 'quit':
+				exit(0)
 			stack.append(int(token))
 		except ValueError:
 			val1 = stack.pop()
@@ -17,12 +19,12 @@ def calculate(arg):
 				result = val1 + val2
 			elif token == '-':
 				result = val2 - val1
-			elif token == '^':
+			'''elif token == '^':
 				result = val2 ** val1
 			elif token == '/':
 				result = val2 / val1
 			elif token == '%':
-				result = val2 % val1
+				result = val2 % val1'''
 			stack.append(result)
 		logging.debug(stack)
 	if len(stack) > 1:
