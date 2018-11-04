@@ -1,6 +1,6 @@
 language: python
 python:
   - "3.5"
-script: pytest coveralls/test_rpn.py
+script: pytest test_rpn.py --doctest-modules --pep8 coveralls -v --cov coveralls --cov-report term-missing
 after_success:
   - coveralls
