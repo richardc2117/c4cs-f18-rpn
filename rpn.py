@@ -1,3 +1,8 @@
+import logging
+import sys
+
+logging.basicConfig(stream=sys.stderr, level=logging.DEBUG)
+
 def calculate(arg):
 	stack = []
 	tokens = arg.split()
@@ -14,12 +19,12 @@ def calculate(arg):
 				result = val2 - val1
 			elif token == '^':
 				result = val2 ** val1
-			'''elif token == '/':
+			elif token == '/':
 				result = val2 / val1
 			elif token == '%':
-				result = val2 % val1'''
+				result = val2 % val1
 			stack.append(result)
-
+		logging.debug(stack)
 	if len(stack) > 1:
 		raise ValueError('Too many arguments on the stack')
 	return stack[0]
