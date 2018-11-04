@@ -1,7 +1,6 @@
 language: python
 python:
   - "3.5"
-script: pytest
+script: pytest coveralls/test_rpn.py
 after_success:
-  - coverage run ./test_rpn.py
   - coveralls
