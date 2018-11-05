@@ -32,12 +32,14 @@ def calculate(arg):
 	return stack[0]
 
 def main():
-	while True:
+	'''while True:
 		try:
 			result = calculate(input("rpm calc> "))
 			print(result)
 		except ValueError:
-			pass
+			pass'''
+	result = calculate("5 5 +")
+	print(result)
 
 if __name__ == '__main__':
 	main()
